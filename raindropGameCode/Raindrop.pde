@@ -22,8 +22,8 @@ class Raindrop { //<>//
     ellipse(loc.x, loc.y, diam, diam);
   }
   
-  boolean isInContactWith(PVector point) {
-    if(point.dist(loc) <= diam/2) {
+  boolean isInContactWith(PVector point, float bradius) {
+    if(point.dist(loc) <= diam/2 + bradius) {
     return true;
     } else return false;
   }
