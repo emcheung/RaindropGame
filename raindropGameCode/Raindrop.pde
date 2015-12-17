@@ -3,9 +3,9 @@ class Raindrop { //<>//
   int diam;
   color c;
 
-  Raindrop(PVector pos) {
+  Raindrop(float x, float y) {
     diam = 50;
-    loc = pos;
+    loc = new PVector(x,y);
     c = color(255);
     acc = new PVector(0, 0.3);
     vel = new PVector(0, 0);
@@ -25,6 +25,12 @@ class Raindrop { //<>//
   boolean isInContactWith(PVector point, float bradius) {
     if(point.dist(loc) <= diam/2 + bradius) {
     return true;
+    } else return false;
+  }
+  
+  boolean isDead() {
+    if (loc.y > height + diam/2) {
+      return true;
     } else return false;
   }
   
