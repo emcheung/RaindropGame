@@ -1,5 +1,5 @@
 class Bucket {
-  int diam;
+  int diam, max;
   PVector loc;
   color c;
   
@@ -7,6 +7,7 @@ class Bucket {
     diam = 50;
     loc = new PVector(mouseX, mouseY);
     c = color(255);
+    max = 200;
   }
   
   void display() {
@@ -19,5 +20,11 @@ class Bucket {
     textAlign(CENTER, CENTER);
     text("Size:", mouseX, mouseY - 10);
     text(diam, mouseX, mouseY + 10);
+  }
+  
+  boolean maxSize() {
+    if(diam >= max) {
+      return true;
+    } else return false;
   }
 }
