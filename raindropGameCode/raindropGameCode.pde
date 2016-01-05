@@ -21,6 +21,10 @@ void draw() {
   textFont(comic);
   textSize(50);
   textAlign(CENTER, CENTER);
+  
+  if(mousePressed) {
+    b.diam = 50; //Reset snowball diameter
+  }
 
   if (b.maxSize()) { //If boolean maxSize returns true
     text("GAME OVER!", width/2, height/2);
