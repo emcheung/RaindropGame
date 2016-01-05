@@ -1,9 +1,11 @@
 class Raindrop { //<>//
+  //Initialize variables
   PVector loc, vel, acc;
   int diam;
   color c;
 
-  Raindrop(float x, float y) {
+  Raindrop(float x, float y) { //Define class Raindrop with parameters x and y
+    //Declare variables
     diam = 20;
     loc = new PVector(x, y);
     c = color(255);
@@ -12,24 +14,24 @@ class Raindrop { //<>//
   }
 
   void fall() {
-    vel.add(acc);
-    loc.add(vel);
+    vel.add(acc); //Increase vel by value acc
+    loc.add(vel); //Increase loc by value vel
   }
 
   void display() {
     fill(c);
     noStroke();
-    ellipse(loc.x, loc.y, diam, diam);
+    ellipse(loc.x, loc.y, diam, diam); //Draw ellipse at loc
   }
 
-  boolean isInContactWith(PVector point, float bradius) {
-    if (point.dist(loc) <= diam/2 + bradius) {
+  boolean isInContactWith(PVector point, float bradius) { //Parameters: specified point (Snow) and radius (Snowball) 
+    if (point.dist(loc) <= diam/2 + bradius) { //If snowball and snow are in contact
       return true;
     } else return false;
   }
 
   boolean isDead() {
-    if (loc.y > height + diam/2) {
+    if (loc.y > height + diam/2) { //If snow reaches bottom of screen
       return true;
     } else return false;
   }

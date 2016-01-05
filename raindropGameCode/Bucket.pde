@@ -1,20 +1,24 @@
 class Bucket {
+  //Initialize variables
   int diam, max;
   PVector loc;
   color c;
   
-  Bucket() {
+  
+  Bucket() { //Define class Bucket
+    //Declare variables
     diam = 50;
     loc = new PVector(mouseX, mouseY);
     c = color(255);
-    max = 200;
+    max = 200; //Game ends when snowball reaches diameter of 200
   }
   
   void display() {
     fill(255);
-    loc = new PVector(mouseX, mouseY);
-    ellipse(loc.x, loc.y, diam, diam);
+    loc = new PVector(mouseX, mouseY); //Define vector loc as mouse position
+    ellipse(loc.x, loc.y, diam, diam); //Draw ellipse at loc
     
+    //Display value of size of snowball
     fill(0);
     textSize(15);
     textAlign(CENTER, CENTER);
