@@ -4,7 +4,7 @@ class Raindrop { //<>//
   color c;
 
   Raindrop(float x, float y) {
-    diam = 50;
+    diam = 20;
     loc = new PVector(x,y);
     c = color(255);
     acc = new PVector(0, 0.3);
