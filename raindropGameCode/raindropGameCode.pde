@@ -1,12 +1,14 @@
 PVector mouse; //Declare PVector mouse
 ArrayList<Raindrop> raindrops = new ArrayList<Raindrop>(); //Create ArrayList raindrops
 Bucket b; //Declare Bucket
+PFont comic; //Declare font Comic Sans (The best font to use lol)
 
 void setup() {
   size(1200, 800);
   mouse = new PVector(); //Initialize PVector mouse
   raindrops.add(new Raindrop(random(width), random(-height/2, 0))); //Add new Raindrop at random place above screen to ArrayList
   b = new Bucket(); //Initialize Bucket b
+  comic = loadFont("Comic Sans MS.ttf"); //load Comic Sans
 }
 
 void draw() {
@@ -15,7 +17,8 @@ void draw() {
 
   fill(255);
   raindrops.add(new Raindrop(random(width), random(-height/2, 0))); //Add new Raindrops
-
+  
+  textFont(comic);
   textSize(50);
   textAlign(CENTER, CENTER);
 
